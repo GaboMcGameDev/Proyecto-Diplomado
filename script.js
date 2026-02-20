@@ -6,9 +6,9 @@ const btn = document.getElementById("music-btn");
 function toggleMusic() {
     if (music.paused) {
         music.play();
-        btn.innerHTML = "⏸ Pause Sound";
+        btn.innerHTML = "⏸";
     } else {
         music.pause();
-        btn.innerHTML = "🎵 Play Sound";
+        btn.innerHTML = "🎵";
     }
 }
