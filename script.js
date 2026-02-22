@@ -78,3 +78,11 @@ async function navigateTo(url, pushState = true) {
         window.location.href = url;
     }
 }
+
+document.querySelectorAll('button').forEach(boton => {
+    boton.addEventListener('click', () => {
+        const sonido = document.getElementById('audio-click');
+        sonido.currentTime = 0;
+        sonido.play();
+    });
+});
