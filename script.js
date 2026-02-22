@@ -78,3 +78,25 @@ async function navigateTo(url, pushState = true) {
         window.location.href = url;
     }
 }
+
+// URL directa de tu archivo en GitHub
+const URL_SONIDO = "https://raw.githubusercontent.com/GaboMcGameDev/Proyecto-Diplomado/main/CLICK%20PAGINA%20WEB.mp3";
+
+// Creamos el objeto de audio globalmente
+const audioClick = new Audio(URL_SONIDO);
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Seleccionamos TODOS los elementos que actúan como botones
+    // Incluye botones, enlaces de navegación y cualquier cosa con clase 'btn'
+    const botones = document.querySelectorAll("button, a, .btn");
+
+    botones.forEach(boton => {
+        boton.addEventListener("click", (e) => {
+            // Reiniciar y reproducir
+            audioClick.currentTime = 0;
+            audioClick.play().catch(error => {
+                console.warn("Reproducción bloqueada: Haz clic en cualquier parte de la página primero.");
+            });
+        });
+    });
+});
